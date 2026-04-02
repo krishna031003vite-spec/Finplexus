@@ -1,0 +1,120 @@
+:root {
+  --bg:     #f8fafc;
+  --card-surface:   #ffffff;
+  --primary-text:   #0f172a;
+  --secondary-text: #475569;
+  --accent-cta:     #0d9488;
+  --accent-hover:   #0f766e;
+  --border:         #e2e8f0;
+  --header-bg:      #0f172a;
+  --highlight:      #6366f1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Global links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #7eadf2;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #4cc0e6 0%, #3facf5 100%);
+  color: #0a2540;
+  box-shadow: 0 14px 30px rgba(30, 144, 255, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(244, 245, 247, 0.35);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #328feb;
+  margin-bottom: 15px;
+}
+
+/* Section padding for all main sections */
+section {
+  padding: 80px 50px;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive grid helper (optional) */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* For consistent shadows on cards */
+.card-shadow {
+  box-shadow: 0 4px 12px rgba(240, 235, 235, 0.08);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(243, 238, 238, 0.15);
+}
+
+/* Footer global style override if needed */
+footer {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}

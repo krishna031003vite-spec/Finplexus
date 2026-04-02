@@ -1,0 +1,128 @@
+:root {
+  --bg: #e8ecf0;
+  --primary: #1f3a5f;
+  --accent: #1A5DD7;
+  --card: #ffffff;
+  --text: #2d2d2d;
+  --subtext: #6b7280;
+}
+
+/* SECTION */
+.features-section {
+  font-family: 'Source Sans 3', 'Segoe UI', sans-serif; 
+  background: var(--bg);
+  padding: 70px 20px;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+.features-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.features-header .tag {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.features-header h1 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* MAIN ROW */
+.features-row {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* LEFT IMAGES */
+.features-left {
+  flex: 1;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* RIGHT */
+.features-right {
+  flex: 1.2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.feature-card {
+  background: #1A5DD7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: left;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ICON */
+.icon {
+  width: 45px;
+  height: 45px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* TITLE */
+.feature-card h3 {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* DESCRIPTION */
+.feature-description {
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .features-row {
+    flex-direction: column;
+  }
+
+  .features-right {
+    grid-template-columns: 1fr;
+  }
+}

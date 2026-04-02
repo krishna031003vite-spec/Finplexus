@@ -1,0 +1,186 @@
+/* :root {
+  --bg: #ffffff;
+  --primary: #1f3a5f;
+  --accent: #7fb069;
+  --accent-dark: #5f8f4f;
+  --subtext: #6b7280;
+}
+  */
+.how-it-works-section {
+  padding: 80px 50px;
+  background: var(--bg);
+}
+ 
+.how-it-works-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+.how-it-works-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+ 
+.how-it-works-header h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+ 
+.how-it-works-header p {
+  font-size: 1.05rem;
+  color: var(--subtext);
+}
+ 
+/* ── Grid ── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+ 
+/* ── Card wrapper — no transform, only shadow ── */
+.flip-card {
+  position: relative;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.07),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+ 
+.flip-card:hover {
+  box-shadow:
+    0 16px 48px rgba(37, 99, 235, 0.14),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+ 
+/* ── Shared face ── */
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px 24px 32px;
+  text-align: center;
+  gap: 14px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+ 
+/* ── FRONT — visible by default, slides up on hover ── */
+.card-front {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+ 
+.flip-card:hover .card-front {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+ 
+/* ── BACK — hidden by default, slides in on hover ── */
+.card-back {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+ 
+.flip-card:hover .card-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+ 
+/* ── Step number ── */
+.card-step {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #a8adb4;
+  position: absolute;
+  top: 18px;
+  left: 22px;
+}
+ 
+/* ── Icon in upper half ── */
+.card-icon-wrap {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+ 
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+ 
+/* ── Front title ── */
+.card-front h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+ 
+/* ── Back description ── */
+.card-back p {
+  font-size: 0.92rem;
+  color: var(--subtext);
+  line-height: 1.65;
+  margin: 0;
+}
+ 
+/* ── Button — completely static ── */
+.card-btn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+ 
+.card-btn:hover {
+  background: #1d4ed8;
+}
+ 
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+}
+ 
+@media (max-width: 768px) {
+  .how-it-works-section { padding: 60px 30px; }
+}
+ 
+@media (max-width: 480px) {
+  .how-it-works-section { padding: 48px 20px; }
+  .steps-grid { grid-template-columns: 1fr; gap: 16px; }
+  .flip-card { height: 280px; }
+}
+ 

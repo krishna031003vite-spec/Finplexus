@@ -1,0 +1,273 @@
+.security-section {
+  padding: 80px 0 80px;
+  background: #ffffff;
+  color: #1f2937;
+  overflow: hidden;
+}
+ 
+.security-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+/* ── Header ── */
+.security-header {
+  text-align: center;
+  margin-bottom: 56px;
+  padding: 0 50px;
+}
+ 
+.security-header h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1f2937;
+  letter-spacing: -0.5px;
+}
+ 
+.security-header p {
+  font-size: 1.05rem;
+  color: #070707;
+}
+ 
+/* ══════════════════════════════════
+   INFINITE SLIDING CARDS
+══════════════════════════════════ */
+ 
+.sec-cards-outer {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  padding: 12px 0 12px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+ 
+.sec-cards-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: sec-scroll 42s linear infinite;
+  padding: 10px 0 20px;
+}
+ 
+.sec-cards-track:hover {
+  animation-play-state: paused;
+}
+ 
+@keyframes sec-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+ 
+/* ── Individual card ── */
+.sec-card {
+  flex-shrink: 0;
+  width: 300px;
+  height: 420px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.sec-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.15),
+    0 4px 14px rgba(0, 0, 0, 0.08);
+}
+ 
+/* ── Dark tint over entire photo ── */
+.sec-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  z-index: 1;
+  border-radius: 20px;
+  pointer-events: none;
+}
+ 
+/* SVG pattern overlay */
+.sec-card-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+/* Glow blob top-right */
+.sec-card-blob {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+/* ── Full card overlay with gradient ── */
+.sec-card-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 24px 24px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.55) 45%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  text-align: left;
+  z-index: 2;
+}
+ 
+/* ── Accent line ── */
+.sec-card-line {
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+  opacity: 1;
+  flex-shrink: 0;
+}
+ 
+/* ── Title ── */
+.sec-card-overlay h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 1);
+}
+ 
+/* ── Description ── */
+.sec-card-overlay p {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  line-height: 1.6;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 1);
+}
+ 
+/* ── CTA ── */
+.sec-card-cta {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  color: #ffffff !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 1);
+}
+ 
+/* ── Compliance pills ── */
+.security-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 52px;
+  padding: 0 50px;
+}
+ 
+.security-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.07);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 99px;
+  padding: 6px 16px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+ 
+.security-pill:hover {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.35);
+}
+ 
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .security-section {
+    padding: 60px 0;
+  }
+ 
+  .security-header {
+    padding: 0 30px;
+  }
+ 
+  .sec-card {
+    width: 260px;
+    height: 360px;
+  }
+ 
+  .security-pills {
+    padding: 0 30px;
+  }
+ 
+  .security-header h2 {
+    font-size: 2rem;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .security-section {
+    padding: 48px 0;
+  }
+ 
+  .security-header {
+    padding: 0 20px;
+  }
+ 
+  .sec-card {
+    width: 220px;
+    height: 310px;
+  }
+ 
+  .sec-card-overlay h3 {
+    font-size: 1rem;
+  }
+ 
+  .sec-card-overlay p {
+    font-size: 0.78rem;
+  }
+ 
+  .security-pills {
+    padding: 0 20px;
+  }
+ 
+  .security-header h2 {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,153 @@
+/* Global Theme Styles */
+
+/* Light Theme (Default) */
+:root {
+  --bg-primary: #f8fafc; /* very light gray */
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1f2937; /* dark slate */
+  --text-secondary: #6b7280; /* muted */
+  --text-tertiary: #9ca3af;
+  --accent-color: #2563eb; /* new primary blue */
+  --accent-light: #1d4ed8;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-text: #1f2937;
+  --button-text: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Theme (kept minimal in case user toggles) */
+[data-theme="dark"] {
+  --bg-primary: #0b1220;
+  --bg-secondary: #0f1724;
+  --bg-tertiary: #091527;
+  --text-primary: #f8fafc;
+  --text-secondary: rgba(248, 250, 252, 0.85);
+  --text-tertiary: rgba(248, 250, 252, 0.7);
+  --accent-color: #2563eb;
+  --accent-light: #1d4ed8;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --input-bg: #0b1220;
+  --input-text: #f8fafc;
+  --button-text: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Apply theme to all sections */
+/* Make light theme the default site-wide */
+body {
+  transition: background-color 0.28s ease, color 0.28s ease;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Services section theme support */
+.services {
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .services {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.service-card {
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .service-card {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--card-border);
+}
+
+[data-theme="light"] .service-card h3 {
+  color: var(--accent-color);
+}
+
+/* Story section - ensure it's styled for the light theme */
+.story-section {
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.story-block {
+  transition: all 0.3s ease;
+  background: #deded3;
+}
+
+/* Contact section theme support */
+.contact {
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .contact {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .contact h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .contact input,
+[data-theme="light"] .contact textarea {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .contact input:focus,
+[data-theme="light"] .contact textarea:focus {
+  border-color: var(--accent-color);
+}
+
+/* Hero/About section theme support */
+.hero {
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .hero {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 55%, #f0f1f3 100%);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .hero-text h1,
+[data-theme="light"] .hero-text p {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .hero-card {
+  background: var(--card-bg);
+  border-color: var(--card-border);
+}
+
+[data-theme="light"] .hero-card h3,
+[data-theme="light"] .hero-card p {
+  color: var(--text-secondary);
+}
+
+/* Footer theme support */
+.footer {
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .footer {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-top: 1px solid var(--card-border);
+}
+
+/* Smooth transitions for all colored elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Prevent transition flicker on interactions */
+*:active,
+*:focus {
+  transition: none;
+}

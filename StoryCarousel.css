@@ -1,0 +1,91 @@
+
+.story-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0 6px;
+}
+
+.story-carousel {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+  will-change: transform;
+}
+
+.carousel-card {
+  min-width: 420px;
+  height: 520px;
+  border-radius: 18px;
+  position: relative;
+  flex: 0 0 auto;
+  background-size: cover;
+  background-position: center center;
+  border: 1px solid rgba(16,24,40,0.04);
+  box-shadow: 0 24px 64px rgba(16, 24, 40, 0.08);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.carousel-card .card-deco {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  mix-blend-mode: normal;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.92) 72%);
+}
+
+
+.card-content {
+  padding: 28px 28px 34px;
+  z-index: 3;
+  width: 100%;
+  color: #0f1724;
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: var(--accent-color);
+  font-weight: 800;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+}
+
+.card-title {
+  margin: 0 0 12px 0;
+  font-size: 2rem;
+  line-height: 1.02;
+  font-weight: 900;
+  color: #0f1724;
+}
+
+.card-sub {
+  margin: 0;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1400px) {
+  .carousel-card { min-width: 360px; height: 460px; }
+}
+
+@media (max-width: 1024px) {
+  .carousel-card { min-width: 300px; height: 380px; }
+}
+
+@media (max-width: 640px) {
+  .carousel-card { min-width: 240px; height: 300px; }
+}
+

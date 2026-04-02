@@ -1,0 +1,320 @@
+.about-section {
+  padding: 80px 32px 0;
+  background: linear-gradient(160deg, #eef2f7 0%, #dde6f0 100%);
+  color: #1f2937;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(26, 58, 92, 0.06);
+  pointer-events: none;
+}
+
+.about-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.07);
+  pointer-events: none;
+}
+
+/* ── Heading ── */
+.about-heading-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 10px;
+  padding: 0 12px;
+  margin-bottom: 24px;
+  overflow: visible ;
+  margin-top: 40px;
+}
+
+.about-word-mask {
+  overflow: hidden;
+  padding-bottom: 8px;
+  padding-top: 4px;
+}
+
+.about-word {
+  display: inline-block;
+  font-size: clamp(1.8rem, 8vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  color: #1a2e45;
+}
+
+/* ── Subheadline ── */
+.about-subheadline-wrap {
+  max-width: 640px;
+  margin: 0 auto 36px;
+  padding: 0 16px;
+}
+
+.about-subheadline {
+  font-size: clamp(1rem, 1.8vw, 1.15rem) !important;
+  color: #4b6280 !important;
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+  font-family: inherit !important;
+}
+
+/* ── Trust Stats Bar ── */
+.about-trust-wrap {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  padding: 0 16px;
+}
+
+.about-trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px !important;
+  border: 1px solid rgba(26, 79, 156, 0.1) !important;
+  padding: 20px 32px;
+  box-shadow: 0 8px 32px rgba(26, 58, 92, 0.08) !important;
+}
+
+.about-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 28px;
+  flex: 1;
+  min-width: 0px;
+  max-width: 180px;
+}
+
+.about-trust-icon {
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.about-trust-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a2e45;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.about-trust-label {
+  font-size: 0.75rem;
+  color: #7a92ab;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.about-trust-divider {
+  width: 1px;
+  height: 44px;
+  background: rgba(26, 79, 156, 0.12);
+  flex-shrink: 0;
+}
+
+/* ── Dashboard stage ── */
+.about-dashboard {
+  background: linear-gradient(145deg, #eaf1fb, #dfe8f5);
+  border-radius: 24px 24px 0 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.about-dashboard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.about-dashboard::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;
+  height: 220px;
+  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.12), transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+/* ── Floating widget cards ── */
+.fw {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.fw:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12), 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.fw-title { color: #1a2e45; }
+.fw-sub   { color: #94a3b8; }
+.fw-stat-l { color: #94a3b8; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 48px 16px 0;
+  }
+
+  .about-heading-wrap {
+    gap: 0 10px;
+    padding: 0 8px;
+    margin-bottom: 18px;
+  }
+
+  .about-word {
+    font-size: clamp(1.8rem, 7vw, 3.5rem);
+    letter-spacing: -1px;
+  }
+
+  .about-subheadline {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .about-trust-bar {
+    padding: 16px 12px;
+    gap: 8px;
+  }
+
+  .about-trust-item {
+    padding: 8px 16px;
+    min-width: 100px;
+  }
+
+  .about-trust-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 32px 12px 0;
+    text-align: center;
+  }
+
+  .about-heading-wrap {
+    gap: 0 8px;
+    padding: 0 4px;
+    margin-bottom: 14px;
+  }
+
+  .about-word {
+    font-size: clamp(1.5rem, 7vw, 2.8rem);
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+
+  .about-subheadline-wrap {
+    padding: 0 4px;
+    margin-bottom: 20px;
+  }
+
+  .about-subheadline {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .about-trust-wrap {
+    padding: 0 4px;
+    margin-bottom: 32px;
+  }
+
+  .about-trust-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 14px 10px;
+    flex-wrap: unset;
+  }
+
+  .about-trust-item {
+    padding: 10px 8px;
+    min-width: unset;
+    border-bottom: 1px solid rgba(26, 79, 156, 0.08);
+  }
+
+  .about-trust-item:nth-child(odd) {
+    border-right: 1px solid rgba(26, 79, 156, 0.08);
+  }
+
+  /* remove bottom border from last row */
+  .about-trust-item:nth-child(3),
+  .about-trust-item:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .about-trust-value {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+
+  .about-trust-label {
+    font-size: 0.68rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .about-trust-icon {
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-word {
+    font-size: 6.8vw;
+  }
+
+  .about-subheadline {
+    font-size: 0.85rem !important;
+  }
+}

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+
+.testimonials-section {
+  padding: 64px 20px;
+  background: #1A5DD7; /* Matches your brand blue */
+  font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.t-title {
+  font-size: clamp(2.5rem, 6vw, 4rem) !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  letter-spacing: -1.5px !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.t-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 1.1rem !important;
+  margin-top: 4px !important;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #fff7ea; /* Warm beige background from your reference image */
+  padding: 24px 22px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  min-height: 320px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.quote-icon {
+  color: #1A5DD7;
+  opacity: 0.2;
+  font-size: 3rem !important;
+}
+
+.quote-text {
+  font-size: 1.15rem !important;
+  line-height: 1.6 !important;
+  color: #334155 !important;
+  font-style: italic;
+  margin-bottom: 30px !important;
+  flex-grow: 1;
+  margin: 16px 0 18px;
+  text-align: left;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 20px;
+}
+
+.author-name {
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  font-size: 1rem !important;
+  text-align: left;
+}
+
+.author-role {
+  color: #64748b !important;
+  font-size: 0.85rem !important;
+  text-align: left;
+}
+
+/* MUI Rating Star Color Overwrite */
+.MuiRating-iconFilled {
+  color: #ffb400 !important;
+}
+
+/* Responsive fixes */
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 80px 20px;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-card {
+    padding: 30px;
+  }
+}

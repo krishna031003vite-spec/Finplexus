@@ -1,0 +1,181 @@
+.cta-section {
+  font-family: inherit;
+  padding: 30px 10px;
+  background: linear-gradient(135deg, #1648b8 0%, #1A5DD7 55%, #2563eb 100%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* decorative circles — consistent with hero / story / services */
+/* .cta-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-circle--tr {
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cta-circle--bl {
+  bottom: -50px;
+  left: -50px;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.04);
+} */
+
+.cta-container {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Badge ── */
+.cta-badge {
+  font-family: inherit;
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(201, 168, 76, 0.38);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  margin-bottom: 20px;
+}
+
+/* ── Heading ── */
+.cta-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+/* ── Subtitle ── */
+.cta-section p {
+  font-size: 1rem;
+  margin-bottom: 36px;
+  letter-spacing: 0.2px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Buttons ── */
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 32px;
+  border-radius: 50px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.2px;
+  font-family: inherit;
+}
+
+/* PRIMARY — white solid, blue text */
+.cta-btn--primary {
+  background: #ffffff;
+  color: #1A5DD7;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
+}
+
+.cta-btn--primary:hover {
+  background: #f0f5ff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn-arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.cta-btn--primary:hover .cta-btn-arrow {
+  transform: translateX(3px);
+}
+
+/* SECONDARY — ghost outlined */
+.cta-btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+}
+
+.cta-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── Trust signals ── */
+.cta-trust {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-trust-item {
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.cta-trust-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #ffffff;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cta-section { padding: 64px 30px; }
+  .cta-section h2 { font-size: 1.9rem; }
+  .cta-trust { gap: 14px; }
+}
+
+@media (max-width: 480px) {
+  .cta-section { padding: 48px 20px; }
+  .cta-section h2 { font-size: 1.6rem; }
+  .cta-buttons { flex-direction: column; gap: 10px; }
+  .cta-btn { width: 100%; justify-content: center; padding: 14px 24px; }
+  .cta-trust { flex-direction: column; align-items: center; gap: 10px; }
+}

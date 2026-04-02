@@ -1,0 +1,202 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  gap: 20px;
+  width: 100%;
+  transition: background 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Scrolled state ── */
+.header--scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Logo ── */
+.header .logo a,
+.header .logo .MuiTypography-root {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a2e45;
+  text-decoration: none;
+  transition: color 0.35s ease;
+}
+
+/* ── Nav list ── */
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Nav MUI buttons — base ── */
+.nav-item.MuiButton-root {
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  position: relative;
+  font-family: inherit !important;
+  background: transparent;
+  border: none;
+  outline: none;                        /* remove browser focus outline */
+  text-decoration: none !important;     /* remove any inherited underline */
+  transition: color 0.2s ease, background 0.2s ease;
+  min-width: unset;
+}
+
+/* Remove MUI ripple underline on focus */
+.nav-item.MuiButton-root:focus,
+.nav-item.MuiButton-root:focus-visible {
+  outline: none;
+  text-decoration: none;
+  background: rgba(26, 79, 156, 0.06);
+}
+
+/* Remove the default MUI focus underline that appears on Blog */
+.nav-item.MuiButton-root .MuiTouchRipple-root {
+  display: none;
+}
+
+/* ── Hover effect ── */
+.nav-item.MuiButton-root:hover {
+  background: rgba(26, 79, 156, 0.07);
+  color: #1a4f9c;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+/* ── Active underline dot ── */
+.nav-item.MuiButton-root::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #1A5DD7;
+  transition: width 0.25s ease;
+}
+
+.nav-item--active.MuiButton-root::after {
+  width: 20px;
+}
+
+.nav-item--active.MuiButton-root {
+  color: #1a4f9c;
+  font-weight: 600;
+}
+
+/* ── Utility admin dot ── */
+.header-utility {
+  display: flex;
+  align-items: center;
+}
+
+.admin-util-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(26, 79, 156, 0.08);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.admin-util-btn:hover {
+  background: rgba(26, 79, 156, 0.15);
+  transform: scale(1.1);
+}
+
+.admin-util-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1a4f9c;
+  display: block;
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  font-size: 1.4rem;
+  color: #1a2e45;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  line-height: 1;
+  outline: none;
+}
+
+.hamburger:hover {
+  background: rgba(26, 79, 156, 0.07);
+}
+
+/* ── Mobile dropdown ── */
+@media (max-width: 768px) {
+  .header { padding: 0 18px; height: 64px; }
+  .header-utility { margin-left: 0; }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    right: 12px;
+    background: #ffffff;
+    width: 220px;
+    padding: 10px;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  .nav.open { display: block; }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .nav-item.MuiButton-root {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    color: #374151;
+    border-radius: 8px;
+  }
+
+  .nav-item.MuiButton-root:hover {
+    background: rgba(26, 79, 156, 0.06);
+    color: #1a4f9c;
+    transform: none;
+  }
+
+  .hamburger { display: block; }
+}
+
+@media (max-width: 480px) {
+  .header { padding: 0 12px; }
+}
